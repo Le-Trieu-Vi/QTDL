@@ -12,6 +12,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </head>
+
 <header class="p-3 bg-dark text-white">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -24,20 +25,12 @@
           <button class="btn p-0" type="submit"><img src="https://cdn3.iconfinder.com/data/icons/leto-user-group/64/__search_user_profile-128.png" alt="" height="40" width="40"></button>
         </form>
 
-        <div class="flex-shrink-0 dropdown">
-          <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://cdn0.iconfinder.com/data/icons/seo-web-4-1/128/Vigor_User-Avatar-Profile-Photo-01-128.png" alt="mdo" width="32" height="32" class="rounded-circle" />
-          </a>
-          <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
-        </div>
+       
+          <form method="post" action="" class="ms-4">
+            <input type="hidden" name="dangxuat" value="1">
+            <button type="submit" class="btn btn-light p-0" style="width: 100px">Đăng xuất</button>
+          </form>
+
       </div>
     </div>
   </div>

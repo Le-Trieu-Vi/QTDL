@@ -27,24 +27,32 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Họ và tên</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="id" class="form-label">Mã học sinh</label>
+                            <input type="text" class="form-control" id="id">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Ngày sinh</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="name" class="form-label">Họ và tên</label>
+                            <input type="namespace" class="form-control" id="name">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Địa chỉ</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="gender" class="form-label">Giới tính</label>
+                            <input type="text" class="form-control" id="gender">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">SĐT Phụ huynh</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="date" class="form-label">Ngày sinh</label>
+                            <input type="date" class="form-control" id="date">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Mã Lớp</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="address" class="form-label">Địa chỉ</label>
+                            <input type="text" class="form-control" id="address">
+                        </div>
+                        <div class="mb-3">
+                            <label for="number" class="form-label">SĐT Phụ huynh</label>
+                            <input type="number" class="form-control" id="number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="idclass" class="form-label">Mã Lớp</label>
+                            <input type="text" class="form-control" id="idclass">
                         </div>
                     </form>
                 </div>
