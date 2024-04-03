@@ -16,7 +16,7 @@
     <div class="row d-flex align-items-center justify-content-center h-100">
       <div class=" my-5 col-md-7 col-lg-5 col-xl-5 border" style="background-color: #F5F5F5;">
         <h1 class="text-center fw-bold mt-5">Đăng nhập</h1>
-        <form method="post" action="">
+        <form method="post" action="index.php?act=student">
           <div class="d-flex flex-row align-items-center my-5">
             <i class="fa-solid fa-user rounded-circle me-2" height="30"></i>
             <input type="text" placeholder="Vui lòng nhập tên đăng nhập" class="form-control" id="username" name="username" required>

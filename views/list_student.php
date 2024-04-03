@@ -1,7 +1,5 @@
 <?php
-// require_once __DIR__ . '/../models/dbconnect.php';
-// require_once __DIR__ . '/../models/student_model.php';
-// include '../components/add_student_model.php';
+include '../models/add_student_model.php';
 $student_grades = [];
 ?>
 
@@ -25,13 +23,13 @@ $student_grades = [];
                 <th scope="col">Ngày sinh</th>
                 <th scope="col">SĐT Phụ huynh</th>
                 <th scope="col">Lớp</th>
-                <th scope="col">Hành động</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
               <?php
-              if (isset($students) && (count($students) > 0)):
-                foreach ($students as $key => $student): ?>
+              if (isset($students) && (count($students) > 0)) :
+                foreach ($students as $key => $student) : ?>
                   <tr>
                     <th scope="row"><?= $key + 1; ?></th>
                     <td><?= $student['MaHocSinh']; ?></td>
@@ -42,8 +40,10 @@ $student_grades = [];
                     <td><?= $student['TenLop']; ?></td>
                     <td>
                       <button class='btn p-1 border-0' onclick='toggleDetails(this)'><img src='https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678110-sign-info-128.png' alt='Xem thêm' title='Xem thêm' height='25' width='25'></button>
-                      <a href='index.php?art=update_student&MaHocSinh=<?= $student['MaHocSinh']; ?>' class='btn p-1 border-0'><img src='https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678134-sign-check-128.png' alt='Sửa' title='Sửa' height='25' width='25'></button></a>
-                      <a href='index.php?art=delete_student&MaHocSinh=<?= $student['MaHocSinh']; ?>' class=' btn p-1 border-0'><img src='https://cdn4.iconfinder.com/data/icons/social-messaging-ui-coloricon-1/21/52-128.png' alt='Xóa' title='Xóa' height='25' width='25'></button></a>
+                      <a href="index.php?act=update_student&MaHocSinh=<?= $student['MaHocSinh']; ?>" type="button" class="btn p-0">
+                        <img src='https://cdn1.iconfinder.com/data/icons/unicons-line-vol-3/24/edit-128.png' alt='Sửa' title='Sửa' height='25' width='25'></button>
+                      </a>
+                      <a href='index.php?act=del_student&MaHocSinh=<?= $student['MaHocSinh']; ?>' onclick="return confirmDelete()" class=' btn p-1 border-0'><img src='https://cdn4.iconfinder.com/data/icons/social-messaging-ui-coloricon-1/21/52-128.png' alt='Xóa' title='Xóa' height='25' width='25'></button></a>
                     </td>
                   </tr>
 
@@ -91,7 +91,6 @@ $student_grades = [];
                       <td>
                     </tr>
                   </div>
-                  </tr>
               <?php endforeach;
               endif;
               ?>
@@ -106,13 +105,10 @@ $student_grades = [];
     function toggleDetails(button) {
       var detailsRow = button.parentElement.parentElement.nextElementSibling;
       detailsRow.style.display = detailsRow.style.display === "none" ? "table-row" : "none";
-      // detailsRow.classList.toggle('show');
     }
 
-    function deleteStudent(studentId) {
-      if (confirm("Bạn có chắc chắn muốn xóa học sinh này không?")) {
-        window.location.href = `delete_student.php?MaHocSinh=${studentId}`;
-      }
+    function confirmDelete() {
+      return confirm('Bạn có chắc muốn xóa học sinh này không?');
     }
   </script>
 </body>
