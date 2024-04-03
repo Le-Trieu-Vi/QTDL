@@ -2,17 +2,39 @@
 include '../models/add_student_model.php';
 $student_grades = [];
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/css/style.css">
+  <script src="funciton.php"></script>
+  <script src="https://kit.fontawesome.com/f4fd0c329a.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</head>
 
 <body>
-  <style>
-  </style>
   <?php include '../components/header.php'; ?>
   <main>
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
       <div class="row">
         <?php include '../components/sidebar.php'; ?>
         <div class="col-10">
-          <h1 class="text-center mt-5">Danh sách học sinh</h1>
+          <h1 class="text-center">Danh sách học sinh</h1>
+          <div class="d-flex justify-content-end" mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <form class="d-flex m-2 " method="post" action="index.php?act=student">
+              <input class="form-control me-2" name="search" style="width: 500px;" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-light me-2" name="search_hs" value="Find" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <div class="thongke">
+                <button type="submit" class="btn btn-light border border-1" name="thongke">Thống kê</button>
+              </div>
+            </form>
+            <button type="button" class="d-flex m-2 btn btn-light border border-1" style=" width: 140px" data-bs-toggle="modal" data-bs-target="#addStudentModal">Thêm học sinh</button>
+          </div>
           <table class="table table-striped">
             <thead>
               <tr>
@@ -23,7 +45,7 @@ $student_grades = [];
                 <th scope="col">Ngày sinh</th>
                 <th scope="col">SĐT Phụ huynh</th>
                 <th scope="col">Lớp</th>
-                <th scope="col"></th>
+                <th scope="col">Hành động</th>
               </tr>
             </thead>
             <tbody>
@@ -37,12 +59,10 @@ $student_grades = [];
                     <td><?= $student['GioiTinh']; ?></td>
                     <td><?= $student['NgaySinh']; ?></td>
                     <td><?= $student['SDTPhuHuynh']; ?></td>
-                    <td><?= $student['TenLop']; ?></td>
+                    <td><?= $student['MaLop']; ?></td>
                     <td>
                       <button class='btn p-1 border-0' onclick='toggleDetails(this)'><img src='https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678110-sign-info-128.png' alt='Xem thêm' title='Xem thêm' height='25' width='25'></button>
-                      <a href="index.php?act=update_student&MaHocSinh=<?= $student['MaHocSinh']; ?>" type="button" class="btn p-0">
-                        <img src='https://cdn1.iconfinder.com/data/icons/unicons-line-vol-3/24/edit-128.png' alt='Sửa' title='Sửa' height='25' width='25'></button>
-                      </a>
+                      <a href='index.php?act=update_student&MaHocSinh=<?= $student['MaHocSinh']; ?>' class='btn p-1 border-0'><img src='https://cdn1.iconfinder.com/data/icons/unicons-line-vol-3/24/edit-128.png' alt='Sửa' title='Sửa' height='25' width='25'></button></a>
                       <a href='index.php?act=del_student&MaHocSinh=<?= $student['MaHocSinh']; ?>' onclick="return confirmDelete()" class=' btn p-1 border-0'><img src='https://cdn4.iconfinder.com/data/icons/social-messaging-ui-coloricon-1/21/52-128.png' alt='Xóa' title='Xóa' height='25' width='25'></button></a>
                     </td>
                   </tr>
@@ -91,6 +111,7 @@ $student_grades = [];
                       <td>
                     </tr>
                   </div>
+                  </tr>
               <?php endforeach;
               endif;
               ?>

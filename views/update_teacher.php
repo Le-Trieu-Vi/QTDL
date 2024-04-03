@@ -5,59 +5,53 @@
             <div class="row">
                 <?php include '../components/sidebar.php'; ?>
                 <div class="offset-2 col-6 pb-5">
-                    <h1 class="text-center my-4">Cập nhật thông tin học sinh</h1>
+                    <h1 class="text-center my-4">Cập nhật thông tin giáo viên</h1>
                     <div class="card">
                         <div class="card-header text-center bg-dark text-white">
-                            <h4>THÔNG TIN HỌC SINH</h4>
+                            <h4>THÔNG TIN GIÁO VIÊN</h4>
                         </div>
                         <div class="card-body">
-                            <form id="sp" class="form-horizontal" action="index.php?act=update_student" method="post">
+                            <form id="sp" class="form-horizontal" action="index.php?act=update_teacher" method="post">
                                 <div class="form-group row ps-1 mb-2 ">
-                                    <label class="col-sm-3 col-form-label ps-1" for="ma">Mã học sinh</label>
+                                    <label class="col-sm-3 col-form-label ps-1" for="ma">Mã giáo viên</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="ma" name="MaHocSinh" placeholder="" required value="<?= $student['MaHocSinh']; ?>" readonly/>
+                                        <input type="text" class="form-control" id="ma" name="MaGiaoVien" placeholder="" required value="<?= $teacher['MaGiaoVien']; ?>" readonly/>
                                     </div>
                                 </div>
                                 <div class="form-group row ps-1 mb-2 text-left">
-                                    <label class="col-sm-3 col-form-label ps-1" for="ten">Họ tên học sinh</label>
+                                    <label class="col-sm-3 col-form-label ps-1" for="ten">Họ tên giáo viên</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="ten" name="HoTen" placeholder="" required value="<?= $student['HoTen']; ?>" />
+                                        <input type="text" class="form-control" id="ten" name="HoTenGiaoVien" placeholder="" required value="<?= $teacher['HoTenGiaoVien']; ?>" />
                                     </div>
                                 </div>
                                 <div class="form-group row ps-1 mb-2">
-                                    <label class="col-sm-3 col-form-label ps-1" for="ten">Mã Lớp</label>
+                                    <label class="col-sm-3 col-form-label ps-1" for="sodienthoai">Số điện thoại</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="ten" name="MaLop" placeholder="" required value="<?= $student['MaLop']; ?>" />
-                                    </div>
-                                </div>
-                                <div class="form-group row ps-1 mb-2">
-                                    <label class="col-sm-3 col-form-label ps-1" for="sodienthoai">SDT PH</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="sodienthoai" name="SDTPhuHuynh" placeholder="" required value="<?= $student['SDTPhuHuynh']; ?>" />
+                                        <input type="text" class="form-control" id="sodienthoai" name="SDT" placeholder="" required value="<?= $teacher['SoDienThoai']; ?>" />
                                     </div>
                                 </div>
                                 <div class="form-group row ps-1 mb-2">
                                     <label class="col-sm-3 col-form-label ps-1" for="gioitinh">Giới tính</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="gioitinh" name="GioiTinh" placeholder="" required value="<?= $student['GioiTinh']; ?>" />
+                                        <input type="text" class="form-control" id="gioitinh" name="GioiTinh" placeholder="" required value="<?= $teacher['GioiTinh']; ?>" />
                                     </div>
                                 </div>
                                 <div class="form-group row ps-1 mb-2">
                                     <label class="col-sm-3 col-form-label ps-1" for="namsinh">Ngày sinh</label>
                                     <div class="col-sm-9">
-                                        <input type="date" class="form-control" id="ngaysinh" name="NgaySinh" placeholder="" required value="<?= $student['NgaySinh']; ?>" />
+                                        <input type="date" class="form-control" id="ngaysinh" name="NgaySinh" placeholder="" required value="<?= $teacher['NgaySinh']; ?>" />
                                     </div>
                                 </div>
 
                                 <div class="form-group row ps-1 mb-2">
                                     <label class="col-sm-3 col-form-label ps-1" for="diachi">Địa chỉ</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="diachi" name="DiaChi" placeholder="" required value="<?= $student['DiaChi']; ?>" />
+                                        <input type="text" class="form-control" id="diachi" name="DiaChi" placeholder="" required value="<?= $teacher['DiaChi']; ?>" />
                                     </div>
                                 </div>
                                 <div class="col-sm-5 offset-sm-4 ">
-                                    <button type="submit" class="btn btn-success" name="updatestudent" value="">Lưu thay đổi</button>
-                                    <a href="index.php?act=student" class="btn btn-secondary" role="button">Trở về</a>
+                                    <button type="submit" class="btn btn-success" name="updateteacher" value="">Lưu thay đổi</button>
+                                    <a href="index.php?act=teacher" class="btn btn-secondary" role="button">Trở về</a>
                                 </div>
                             </form>
                         </div>

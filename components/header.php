@@ -13,24 +13,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </head>
 
-<header class="p-3 bg-dark text-white">
+<header class="p-1 bg-dark text-white">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <h2>Quản lý học sinh</h2>
       </a>
       <div class="d-flex align-items-center">
-        <form class="w-100 me-3 d-flex justify-content-start" role="search" style="height: 40px;">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn p-0" type="submit"><img src="https://cdn3.iconfinder.com/data/icons/leto-user-group/64/__search_user_profile-128.png" alt="" height="40" width="40"></button>
+        <form method="post" action="" class="d-flex m-2 ">
+          <input type="hidden" name="dangxuat" value="1">
+          <button type="submit" class="btn btn-light " style="width: 100px">Đăng xuất</button>
         </form>
-
-       
-          <form method="post" action="" class="ms-4">
-            <input type="hidden" name="dangxuat" value="1">
-            <button type="submit" class="btn btn-light p-0" style="width: 100px">Đăng xuất</button>
-          </form>
-
       </div>
     </div>
   </div>
